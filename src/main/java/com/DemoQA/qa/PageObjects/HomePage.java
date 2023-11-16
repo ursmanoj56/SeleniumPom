@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.DemoQA.qa.Base.BaseTest;
 
+import jdk.internal.org.jline.utils.Log;
+
 public class HomePage extends BaseTest {
 	Actions actions = new Actions(driver);
 	JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -22,9 +24,11 @@ public class HomePage extends BaseTest {
 	}
 	
 	public String validaHometitle() {
+		Log.info("Verifying Title test");
 		return driver.getTitle();
 	}
 	 public Elements clickElements() {
+		 Log.info("verifying click action on element box");
 		 JavascriptExecutor js = (JavascriptExecutor) driver;
 		 js.executeScript("window.scrollBy(0,250)", "");
 		 actions.moveToElement(elementbox).build().perform();
@@ -32,6 +36,7 @@ public class HomePage extends BaseTest {
 		 return new Elements();
 	 }
 	 public Widgets clicWidgets() {
+		 Log.info("verifying click action on Widgets box");
 		 js.executeScript("window.scrollBy(0,250)", "");
 		 actions.moveToElement(widgets).build().perform();
 		widgets.click();
